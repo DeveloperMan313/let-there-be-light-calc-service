@@ -20,5 +20,5 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.set_status, name='set-status'),
+    path('', views.lamp_numbers, name='lamp-numbers'),
 ]

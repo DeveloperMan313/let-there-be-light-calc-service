@@ -1,2 +1,4 @@
+.zed/
 venv/
 __pycache__/
+.env
