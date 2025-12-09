@@ -51,14 +51,14 @@ def lamp_numbers_callback(task: futures.Future[LightRequest]):
         return
 
     url = CALLBACK_URL.format(result["id"])
-    answer = {
+    data = {
         "key": CALLBACK_KEY,
         "light_request_to_lamp": [
             {"lamp_id": lrtl["lamp"]["id"], "number": lrtl["number"]}
             for lrtl in result["light_request_to_lamp"]
         ],
     }
-    requests.put(url, data=answer, timeout=3)
+    requests.put(url, json=data, timeout=3)
 
 
 @api_view(["POST"])
